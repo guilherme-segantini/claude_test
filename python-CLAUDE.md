@@ -13,9 +13,7 @@ This document contains critical information about working with this codebase. Fo
 
 2. Code Quality
    - Type hints required for all code
-   - use pyrefly for type checking
-     - run `pyrefly init` to start
-     - run `pyrefly check` after every change and fix resultings errors
+   - Use pyright for type checking: `uv run pyright`
    - Public APIs must have docstrings
    - Functions must be focused and small
    - Follow existing patterns exactly
@@ -61,14 +59,13 @@ This document contains critical information about working with this codebase. Fo
 - **Build Test Environments**: Create testing environments for components that are difficult to validate directly
 - **Functional Code**: Use functional and stateless approaches where they improve clarity
 - **Clean logic**: Keep core logic clean and push implementation details to the edges
-- **File Organsiation**: Balance file organization with simplicity - use an appropriate number of files for the project scale
+- **File Organization**: Balance file organization with simplicity - use an appropriate number of files for the project scale
 
 ## System Architecture
 
-- use pydantic and langchain
-- this project is a very simple chatbot. Keep files to a minimum
-
-
+- Use Pydantic for data validation and settings management
+- Keep the codebase modular and maintainable
+- Prefer flat structures over deep nesting
 
 ## Pull Requests
 
@@ -101,10 +98,6 @@ This document contains critical information about working with this codebase. Fo
   5. Convert to ready PR when functionally complete and tests pass
   6. Merge after reviews and checks pass
 
-## Python Tools
-
-- use context7 mcp to check details of libraries
-
 ## Code Formatting
 
 1. Ruff
@@ -121,8 +114,7 @@ This document contains critical information about working with this codebase. Fo
      - Imports: split into multiple lines
 
 2. Type Checking
-  - run `pyrefly init` to start
-  - run `pyrefly check` after every change and fix resultings errors
+   - Run: `uv run pyright`
    - Requirements:
      - Explicit None checks for Optional
      - Type narrowing for strings
